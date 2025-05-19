@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://bnveoru3o05u5"]
+
+[ext_resource type="Script" path="res://Game/Script/VFX_Controller.gd" id="1_43vdk"]
+[ext_resource type="Texture2D" uid="uid://djrkcocj1cbcl" path="res://Asset/VFX/VFX_Land.png" id="1_koes7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hct6d"]
+atlas = ExtResource("1_koes7")
+region = Rect2(0, 0, 80, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cswdb"]
+atlas = ExtResource("1_koes7")
+region = Rect2(80, 0, 80, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i0s6s"]
+atlas = ExtResource("1_koes7")
+region = Rect2(160, 0, 80, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0okb5"]
+atlas = ExtResource("1_koes7")
+region = Rect2(240, 0, 80, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2hkfw"]
+atlas = ExtResource("1_koes7")
+region = Rect2(320, 0, 80, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pgm8a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hct6d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cswdb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i0s6s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0okb5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2hkfw")
+}],
+"loop": false,
+"name": &"Start",
+"speed": 15.0
+}]
+
+[node name="VFX_JumpUp" type="Node2D"]
+script = ExtResource("1_43vdk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -12)
+sprite_frames = SubResource("SpriteFrames_pgm8a")
+animation = &"Start"
+autoplay = "Start"
